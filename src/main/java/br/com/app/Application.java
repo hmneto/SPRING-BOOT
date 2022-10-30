@@ -26,7 +26,7 @@ import br.com.app.repository.UserRepository;
 @SpringBootApplication
 @EntityScan(basePackages = { "br.com.app.model" })
 @EnableJpaRepositories(basePackages = { "br.com.app.repository" })
-@ComponentScan(basePackages={"br.com.app.controller"})
+//@ComponentScan(basePackages={"br.com.app.controller"})
 
 @Component
 @RestController
@@ -34,7 +34,7 @@ public class Application {
 
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);
-		System.out.println(new BCryptPasswordEncoder().encode("senha123"));
+		System.out.println(new BCryptPasswordEncoder().encode("123"));
 		System.out.println("Spring Core Version:- " + SpringVersion.getVersion());
 		// springApplication.run(args);
 	}
@@ -48,7 +48,7 @@ public class Application {
 	@Transactional
 	@GetMapping("/")
 	public String Index() {
-		String senha = "$2a$10$DmQDpUUFEubvLxk2hmC4K.g3HRqtI4lH3ZGFuUAN0g4n.oRK072n2";
+		String senha = "$2a$10$xQKue46QQjssCHNZMUWCw.JpOwocN733j8Gr7txYDD5zhfGune/S.";
 		RoleModel roleAdmin = new RoleModel(RoleName.ROLE_ADMIN);
 		roleRepository.save(roleAdmin);
 
