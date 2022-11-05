@@ -17,8 +17,7 @@ pipeline {
 
         stage('error') {
           steps {
-            sh 'mvn test'
-            tool(name: 'maven', type: 'mvn test')
+            sh 'apk add maven && mvn test'
           }
         }
 
