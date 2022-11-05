@@ -15,9 +15,10 @@ pipeline {
           }
         }
 
-        stage('') {
+        stage('error') {
           steps {
             sh 'mvn test'
+            tool(name: 'maven', type: 'mvn test')
           }
         }
 
