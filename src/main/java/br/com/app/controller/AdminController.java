@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @Component
 @RestController
-@CrossOrigin(origins = "*", maxAge = 3600)
+//@CrossOrigin(origins = "*", maxAge = 3600)
 @RequestMapping("/admin")
 public class AdminController {
 	@GetMapping
