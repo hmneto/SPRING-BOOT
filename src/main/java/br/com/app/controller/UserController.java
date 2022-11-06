@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/user")
 public class UserController {
 	@GetMapping
+	@CrossOrigin(origins = "*", maxAge = 3600)
 	public String index() {
 		return "User";
 	}
