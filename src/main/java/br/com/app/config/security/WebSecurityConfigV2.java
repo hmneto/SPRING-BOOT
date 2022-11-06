@@ -26,10 +26,10 @@ public class WebSecurityConfigV2 {
                 .anyRequest().authenticated()
                 .and()
                 .cors()
+                .disable()
 //                .addMapping("/**")
 //        		.allowedOrigins("*")
 //        		.allowedOrigins("GET", "POST", "PUT", "DELETE", "OPTIONS", "HEAD", "TRACE", "CONNECT")
-                .and()
                 .csrf().disable();
         return http.build();
     }
