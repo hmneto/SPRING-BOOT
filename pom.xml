@@ -8,11 +8,11 @@
 		<version>2.7.4</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>br.com.cabidedamoda</groupId>
-	<artifactId>controle.caixa</artifactId>
+	<groupId>br.com.app</groupId>
+	<artifactId>app</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>controle.caixa</name>
-	<description>Api do controle de caixa</description>
+	<name>app</name>
+	<description>Api com authentication and authorization</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
