@@ -28,7 +28,7 @@ import br.com.app.repository.UserRepository;
 @SpringBootApplication
 @EntityScan(basePackages = { "br.com.app.model" })
 @EnableJpaRepositories(basePackages = { "br.com.app.repository" })
-@ComponentScan(basePackages={"br.com.app.controller"})
+//@ComponentScan(basePackages={"br.com.app.controller"})
 
 @Component
 @RestController
