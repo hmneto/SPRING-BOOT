@@ -33,7 +33,7 @@ import br.com.app.repository.UserRepository;
 @Component
 @RestController
 @RequestMapping
-@CrossOrigin
+//@CrossOrigin
 public class Application {
 
 	public static void main(String[] args) {
@@ -51,6 +51,7 @@ public class Application {
 
 	@Transactional
 	@GetMapping("/")
+	@CrossOrigin
 	public String Index() {
 		// String senha = "$2a$10$xQKue46QQjssCHNZMUWCw.JpOwocN733j8Gr7txYDD5zhfGune/S.";
 		// RoleModel roleAdmin = new RoleModel(RoleName.ROLE_ADMIN);
