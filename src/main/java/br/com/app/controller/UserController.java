@@ -7,10 +7,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/user")
-@CrossOrigin
 public class UserController {
 	@GetMapping
-	@CrossOrigin
+	@CrossOrigin(origins = "*")
 	public String index() {
 		return "User";
 	}
