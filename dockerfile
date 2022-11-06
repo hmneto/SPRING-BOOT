@@ -8,7 +8,7 @@ RUN apk add maven
 
 WORKDIR "/home"
 
-# RUN mvn clean package
+RUN mvn clean package
 
 EXPOSE 8081
 
