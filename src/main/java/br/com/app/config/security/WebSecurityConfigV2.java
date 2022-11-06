@@ -5,18 +5,19 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
 @EnableGlobalMethodSecurity(prePostEnabled = true)
+@EnableWebSecurity
 public class WebSecurityConfigV2 {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
-        		.cors()
-        		.and()
+        	
                 .httpBasic()
                 .and()
                 .authorizeHttpRequests()
@@ -24,9 +25,13 @@ public class WebSecurityConfigV2 {
                 .antMatchers(HttpMethod.GET, "/all/**").permitAll()       
                 .antMatchers(HttpMethod.GET, "/user/**").hasRole("USER")
                 .antMatchers(HttpMethod.GET, "/admin/**").hasRole("ADMIN")
-                .anyRequest().authenticated()
+                .anyRequest()
+                .authenticated()
                 .and()
-                .csrf().disable();
+            	.cors()
+        		.and()
+                .csrf()
+                .disable();
         return http.build();
     }
 
