@@ -9,8 +9,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
-//@Configuration
-//@EnableGlobalMethodSecurity(prePostEnabled = true)
+@Configuration
+@EnableGlobalMethodSecurity(prePostEnabled = true)
 public class WebSecurityConfigV2 {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
@@ -25,11 +25,8 @@ public class WebSecurityConfigV2 {
                 .antMatchers(HttpMethod.GET, "/admin/**").hasRole("ADMIN")
                 .anyRequest().authenticated()
                 .and()
-//                .cors()
-//                .disable()
-//                .addMapping("/**")
-//        		.allowedOrigins("*")
-//        		.allowedOrigins("GET", "POST", "PUT", "DELETE", "OPTIONS", "HEAD", "TRACE", "CONNECT")
+                .cors()
+                .disable()
                 .csrf().disable();
         return http.build();
     }
