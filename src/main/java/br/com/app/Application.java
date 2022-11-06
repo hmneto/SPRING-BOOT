@@ -37,10 +37,7 @@ public class Application {
 		System.out.println(new BCryptPasswordEncoder().encode("123"));
 		System.out.println("Spring Core Version:- " + SpringVersion.getVersion());
 		// springApplication.run(args);
-		main2();
-		
 	}
-
 
 	@Autowired
 	RoleRepository roleRepository;
@@ -49,7 +46,8 @@ public class Application {
 	UserRepository usuarioRepository;
 
 	@Transactional
-	public static void main2(){
+	@GetMapping("/")
+	public String Index() {
 		String senha = "$2a$10$xQKue46QQjssCHNZMUWCw.JpOwocN733j8Gr7txYDD5zhfGune/S.";
 		RoleModel roleAdmin = new RoleModel(RoleName.ROLE_ADMIN);
 		roleRepository.save(roleAdmin);
@@ -69,13 +67,6 @@ public class Application {
 		UserModel User = new UserModel("user", senha, rolesUser);
 		usuarioRepository.save(User);
 
-	}
-
-
-	
-	// @GetMapping("/")
-	public String Index() {
-	
 		return "index";
 	}
 }
