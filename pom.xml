@@ -60,14 +60,6 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-			<plugin>
-    <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-maven-plugin</artifactId>
-            <configuration>
-                <jvmArguments>-Xmx2048m -XX:NativeMemoryTracking=summary --enable-preview</jvmArguments>
-        </configuration>
-</plugin>
-
 		</plugins>
 	</build>
 
