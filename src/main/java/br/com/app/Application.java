@@ -14,7 +14,9 @@ import org.springframework.core.SpringVersion;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.app.enums.RoleName;
@@ -30,6 +32,8 @@ import br.com.app.repository.UserRepository;
 
 @Component
 @RestController
+@RequestMapping
+@CrossOrigin
 public class Application {
 
 	public static void main(String[] args) {
@@ -68,5 +72,8 @@ public class Application {
 		// usuarioRepository.save(User);
 
 		return "index";
+//	    final HttpHeaders httpHeaders= new HttpHeaders();
+//	    httpHeaders.setContentType(MediaType.APPLICATION_JSON);
+//	    return new ResponseEntity<String>("{\"test\": \"Hello with ResponseEntity\"}", httpHeaders, HttpStatus.OK);
 	}
 }

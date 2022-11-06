@@ -1,4 +1,4 @@
-package br.com.app.config.security;
+package br.com.app.controller;
 
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
