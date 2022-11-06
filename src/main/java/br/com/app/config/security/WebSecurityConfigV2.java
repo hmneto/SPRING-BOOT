@@ -25,8 +25,8 @@ public class WebSecurityConfigV2 {
                 .antMatchers(HttpMethod.GET, "/admin/**").hasRole("ADMIN")
                 .anyRequest().authenticated()
                 .and()
-                .cors()
-                .disable()
+//                .cors()
+//                .disable()
                 .csrf().disable();
         return http.build();
     }
