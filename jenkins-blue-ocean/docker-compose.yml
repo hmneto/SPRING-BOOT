@@ -1,0 +1,10 @@
+version: "3"
+services:
+  jenkins:
+    container_name: jenkins
+    build: .
+    ports:
+      - 81:8080
+    # volumes:
+    #   - .:/app/
+    image: jenkins
