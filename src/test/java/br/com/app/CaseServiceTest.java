@@ -14,7 +14,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 class CaseServiceTest {
 
-
+		  @Test
 		  public void testaRegistro() throws Exception {
 		      Assertions.assertEquals(10,10);  
 		  }
