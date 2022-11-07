@@ -3,10 +3,9 @@ import { encode } from "base-64";
 export function setupCounter(element: HTMLButtonElement) {
   let counter = 0
   const setCounter = (count: number) => {
-    // fetch("http://ip172-18-0-5-cdjv4463tccg00d5v9s0-80.direct.labs.play-with-docker.com/user").then(x=>x.text()).then(x=>console.log(x))
     const username = 'admin'
     const password = '123'
-    fetch('http://ip172-18-0-14-cdk2qmf91rrg00fv7c80-80.direct.labs.play-with-docker.com/user',
+    fetch('http://ip172-18-0-14-cdk2qmf91rrg00fv7c80-80.direct.labs.play-with-docker.com/admin',
      {method:'GET', 
      headers: new Headers(
       {
