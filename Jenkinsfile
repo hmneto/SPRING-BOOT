@@ -9,24 +9,9 @@ pipeline {
           }
         }
 
-        stage('') {
+        stage('error') {
           steps {
-            script {
-              pipeline{
-                agent { label 'built-in' }
-                tools {
-                  maven '3.8.4'
-                }
-                stages{
-                  stage('teste'){
-                    steps {
-                      sh 'mvn --version'
-                    }
-                  }
-                }
-              }
-            }
-
+            build 'test'
           }
         }
 
