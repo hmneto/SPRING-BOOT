@@ -14,7 +14,6 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.CrossOrigin;
-//import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -25,7 +24,7 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.app.repository.RoleRepository;
 import br.com.app.repository.UserRepository;
 
-@SpringBootApplication
+@SpringBootApplication 
 @EntityScan(basePackages = { "br.com.app.model" })
 @EnableJpaRepositories(basePackages = { "br.com.app.repository" })
 //@ComponentScan(basePackages={"br.com.app.controller"})
@@ -34,6 +33,7 @@ import br.com.app.repository.UserRepository;
 @RestController
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RequestMapping
+
 public class Application {
 
 	public static void main(String[] args) {
