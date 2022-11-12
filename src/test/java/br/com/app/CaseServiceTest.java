@@ -51,7 +51,7 @@ public class CaseServiceTest {
 	
 	@BeforeEach
 	public void setap() {
-		CaseModel caseModel = new CaseModel("TEST_VALUE2",LocalDateTime.now());
+		CaseModel caseModel = new CaseModel("TEST_VALUE",LocalDateTime.now());
 		System.out.println(caseModel.toString());
 		
 		Mockito.when(caseRepository.findByValue(caseModel.getValue()))
