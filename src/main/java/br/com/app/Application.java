@@ -38,7 +38,6 @@ import br.com.app.repository.UserRepository;
 @RestController
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RequestMapping
-
 public class Application {
 
 	public static void main(String[] args) {
@@ -56,27 +55,44 @@ public class Application {
 	@Transactional
 	@GetMapping("/")
 	public ResponseEntity<String> Index() {
-		 String senha = "$2a$10$xQKue46QQjssCHNZMUWCw.JpOwocN733j8Gr7txYDD5zhfGune/S.";
-		 RoleModel roleAdmin = new RoleModel(RoleName.ROLE_ADMIN);
-		 roleRepository.save(roleAdmin);
+		String senha = "$2a$10$xQKue46QQjssCHNZMUWCw.JpOwocN733j8Gr7txYDD5zhfGune/S.";
+		RoleModel roleAdmin = new RoleModel(RoleName.ROLE_ADMIN);
+		roleRepository.save(roleAdmin);
 	
 
-		 RoleModel roleUser = new RoleModel(RoleName.ROLE_USER);
-		 roleRepository.save(roleUser);
+		RoleModel roleUser = new RoleModel(RoleName.ROLE_USER);
+		roleRepository.save(roleUser);
 
-		 List<RoleModel> rolesAdmin = new ArrayList<RoleModel>();
-		 rolesAdmin.add(roleAdmin);
+		List<RoleModel> rolesAdmin = new ArrayList<RoleModel>();
+		rolesAdmin.add(roleAdmin);
 
-		 UserModel Admin = new UserModel("admin", senha, rolesAdmin);
-		 usuarioRepository.save(Admin);
+		UserModel Admin = new UserModel("admin", senha, rolesAdmin);
+		usuarioRepository.save(Admin);
 
-		 List<RoleModel> rolesUser = new ArrayList<RoleModel>();
-		 rolesUser.add(roleUser);
+		List<RoleModel> rolesUser = new ArrayList<RoleModel>();
+		rolesUser.add(roleUser);
 
-		 UserModel User = new UserModel("user", senha, rolesUser);
-		 usuarioRepository.save(User);
+		UserModel User = new UserModel("user", senha, rolesUser);
+		usuarioRepository.save(User);
 	    final HttpHeaders httpHeaders= new HttpHeaders();
 	    httpHeaders.setContentType(MediaType.APPLICATION_JSON);
 	    return new ResponseEntity<String>("{\"test\": \"Index\"}", httpHeaders, HttpStatus.OK);
 	}
 }
+
+
+//<dependency>
+//<groupId>mysql</groupId>
+//<artifactId>mysql-connector-java</artifactId>
+//<scope>runtime</scope>
+//</dependency>
+
+
+
+//<dependency>
+//<groupId>com.h2database</groupId>
+//<artifactId>h2</artifactId>
+//<scope>runtime</scope>
+//</dependency>
+
+
