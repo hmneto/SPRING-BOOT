@@ -33,8 +33,8 @@ public class WebSecurityConfigV2 {
 //                .authorizeRequests()
 //                .antMatchers("/case")
 //                .permitAll()
-//                .and()
-//            	.cors()
+                .and()
+            	.cors()
         		.and()
                 .csrf()
                 .disable();
