@@ -46,12 +46,12 @@ public class CaseServiceTest {
 		
 		Optional<CaseModel> OptionalCaseModel = caseService.getCase("TEST_VALUE");
 		System.out.println(OptionalCaseModel.get().getValue());
-		Assertions.assertEquals(10,10);  
+		Assertions.assertEquals("TEST_VALUE",OptionalCaseModel.get().getValue());  
 	}
 	
 	@BeforeEach
 	public void setap() {
-		CaseModel caseModel = new CaseModel("TEST_VALUE",LocalDateTime.now());
+		CaseModel caseModel = new CaseModel("TEST_VALUE2",LocalDateTime.now());
 		System.out.println(caseModel.toString());
 		
 		Mockito.when(caseRepository.findByValue(caseModel.getValue()))
