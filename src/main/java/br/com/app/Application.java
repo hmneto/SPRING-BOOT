@@ -1,7 +1,7 @@
 package br.com.app;
 
-//import java.util.ArrayList;
-//import java.util.List;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.transaction.Transactional;
 
@@ -23,9 +23,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-//import br.com.app.enums.RoleName;
-//import br.com.app.model.RoleModel;
-//import br.com.app.model.UserModel;
+import br.com.app.enums.RoleName;
+import br.com.app.model.RoleModel;
+import br.com.app.model.UserModel;
 import br.com.app.repository.RoleRepository;
 import br.com.app.repository.UserRepository;
 
@@ -56,26 +56,25 @@ public class Application {
 	@Transactional
 	@GetMapping("/")
 	public ResponseEntity<String> Index() {
-		// String senha = "$2a$10$xQKue46QQjssCHNZMUWCw.JpOwocN733j8Gr7txYDD5zhfGune/S.";
-		// RoleModel roleAdmin = new RoleModel(RoleName.ROLE_ADMIN);
-		// roleRepository.save(roleAdmin);
+		 String senha = "$2a$10$xQKue46QQjssCHNZMUWCw.JpOwocN733j8Gr7txYDD5zhfGune/S.";
+		 RoleModel roleAdmin = new RoleModel(RoleName.ROLE_ADMIN);
+		 roleRepository.save(roleAdmin);
+	
 
-		// RoleModel roleUser = new RoleModel(RoleName.ROLE_USER);
-		// roleRepository.save(roleUser);
+		 RoleModel roleUser = new RoleModel(RoleName.ROLE_USER);
+		 roleRepository.save(roleUser);
 
-		// List<RoleModel> rolesAdmin = new ArrayList<RoleModel>();
-		// rolesAdmin.add(roleAdmin);
+		 List<RoleModel> rolesAdmin = new ArrayList<RoleModel>();
+		 rolesAdmin.add(roleAdmin);
 
-		// UserModel Admin = new UserModel("admin", senha, rolesAdmin);
-		// usuarioRepository.save(Admin);
+		 UserModel Admin = new UserModel("admin", senha, rolesAdmin);
+		 usuarioRepository.save(Admin);
 
-		// List<RoleModel> rolesUser = new ArrayList<RoleModel>();
-		// rolesUser.add(roleUser);
+		 List<RoleModel> rolesUser = new ArrayList<RoleModel>();
+		 rolesUser.add(roleUser);
 
-		// UserModel User = new UserModel("user", senha, rolesUser);
-		// usuarioRepository.save(User);
-
-//		return "index";
+		 UserModel User = new UserModel("user", senha, rolesUser);
+		 usuarioRepository.save(User);
 	    final HttpHeaders httpHeaders= new HttpHeaders();
 	    httpHeaders.setContentType(MediaType.APPLICATION_JSON);
 	    return new ResponseEntity<String>("{\"test\": \"Index\"}", httpHeaders, HttpStatus.OK);
