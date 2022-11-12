@@ -5,6 +5,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import br.com.app.model.CaseModel;
 import br.com.app.repository.CaseRepository;
 
 @Service
@@ -13,8 +14,9 @@ public class CaseService {
 	@Autowired
 	CaseRepository caseRepository;
 
-	public Optional<CaseService> getCase(String value) { 
-		return caseRepository.findByValue(value);
+	public Optional<CaseModel> getCase(String value) { 
+		Optional<CaseModel>  optionalCaseModel =caseRepository.findByValue(value);
+		return optionalCaseModel;
 	}
 	
 }

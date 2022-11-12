@@ -1,10 +1,12 @@
 package br.com.app;
 
 import java.time.LocalDateTime;
+import java.util.Optional;
 
-import org.junit.Before;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.runner.RunWith;
+import org.mockito.Mockito;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -42,16 +44,17 @@ public class CaseServiceTest {
 //		CaseModel caseModel = new CaseModel("TEST_VALUE",LocalDateTime.now());
 //		System.out.println(caseModel.toString());
 		
-//		var numero = caseService.getCase("TEST_VALUE");
-//		System.out.println(numero.toString());
+		Optional<CaseModel> OptionalCaseModel = caseService.getCase("TEST_VALUE");
+		System.out.println(OptionalCaseModel.get().getValue());
 		Assertions.assertEquals(10,10);  
 	}
 	
-	@Before
+	@BeforeEach
 	public void setap() {
 		CaseModel caseModel = new CaseModel("TEST_VALUE",LocalDateTime.now());
 		System.out.println(caseModel.toString());
 		
-		//Mockito.when(caseRepository.findByValue(caseModel.getValue())).thenReturn(java.util.Optional.of(case));
+		Mockito.when(caseRepository.findByValue(caseModel.getValue()))
+		.thenReturn(java.util.Optional.of(caseModel));
 	}
 }

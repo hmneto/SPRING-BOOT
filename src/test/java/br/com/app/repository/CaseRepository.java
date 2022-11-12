@@ -9,6 +9,6 @@ import br.com.app.service.CaseService;
 
 public interface CaseRepository extends JpaRepository<CaseModel, Integer> {
 
-	Optional<CaseService> findByValue(String string);
+	Optional<CaseModel> findByValue(String string);
 
 }
