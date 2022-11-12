@@ -12,6 +12,10 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.core.SpringVersion;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -41,7 +45,6 @@ public class Application {
 		SpringApplication.run(Application.class, args);
 		System.out.println(new BCryptPasswordEncoder().encode("123"));
 		System.out.println("Spring Core Version:- " + SpringVersion.getVersion());
-		// springApplication.run(args);
 	}
 
 	@Autowired
@@ -52,7 +55,7 @@ public class Application {
 
 	@Transactional
 	@GetMapping("/")
-	public String Index() {
+	public ResponseEntity<String> Index() {
 		// String senha = "$2a$10$xQKue46QQjssCHNZMUWCw.JpOwocN733j8Gr7txYDD5zhfGune/S.";
 		// RoleModel roleAdmin = new RoleModel(RoleName.ROLE_ADMIN);
 		// roleRepository.save(roleAdmin);
@@ -72,9 +75,9 @@ public class Application {
 		// UserModel User = new UserModel("user", senha, rolesUser);
 		// usuarioRepository.save(User);
 
-		return "index";
-//	    final HttpHeaders httpHeaders= new HttpHeaders();
-//	    httpHeaders.setContentType(MediaType.APPLICATION_JSON);
-//	    return new ResponseEntity<String>("{\"test\": \"Hello with ResponseEntity\"}", httpHeaders, HttpStatus.OK);
+//		return "index";
+	    final HttpHeaders httpHeaders= new HttpHeaders();
+	    httpHeaders.setContentType(MediaType.APPLICATION_JSON);
+	    return new ResponseEntity<String>("{\"test\": \"Index\"}", httpHeaders, HttpStatus.OK);
 	}
 }

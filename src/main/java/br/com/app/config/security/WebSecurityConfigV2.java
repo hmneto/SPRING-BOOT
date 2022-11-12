@@ -18,26 +18,26 @@ public class WebSecurityConfigV2 {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
         
-        .httpBasic().disable();
+//        .httpBasic().disable();
         	
-//                .httpBasic()
+                .httpBasic()
+                .and()
+                .authorizeHttpRequests()
+                .antMatchers(HttpMethod.GET, "/").permitAll()
+                .antMatchers(HttpMethod.GET, "/all/**").permitAll()       
+                .antMatchers(HttpMethod.GET, "/user/**").hasRole("USER")
+                .antMatchers(HttpMethod.GET, "/admin/**").hasRole("ADMIN")
+                .anyRequest()
+                .authenticated()
 //                .and()
-//                .authorizeHttpRequests()
-//                .antMatchers(HttpMethod.GET, "/").permitAll()
-//                .antMatchers(HttpMethod.GET, "/all/**").permitAll()       
-//                .antMatchers(HttpMethod.GET, "/user/**").hasRole("USER")
-//                .antMatchers(HttpMethod.GET, "/admin/**").hasRole("ADMIN")
-//                .anyRequest()
-//                .authenticated()
-////                .and()
-////                .authorizeRequests()
-////                .antMatchers("/case")
-////                .permitAll()
+//                .authorizeRequests()
+//                .antMatchers("/case")
+//                .permitAll()
 //                .and()
 //            	.cors()
-//        		.and()
-//                .csrf()
-//                .disable();
+        		.and()
+                .csrf()
+                .disable();
         return http.build();
     }
 

@@ -5,7 +5,7 @@ export function setupCounter(element: HTMLButtonElement) {
   const setCounter = (count: number) => {
     const username = 'admin'
     const password = '123'
-    fetch('http://ip172-18-0-14-cdk2qmf91rrg00fv7c80-80.direct.labs.play-with-docker.com/admin',
+    fetch('http://localhost:8081/admin',
      {method:'GET', 
      headers: new Headers(
       {
