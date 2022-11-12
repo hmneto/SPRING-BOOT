@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -21,12 +22,14 @@ import br.com.app.enums.RoleName;
 public class RoleModel implements GrantedAuthority {
     private static final long serialVersionUID = 1L;
 
+//	@Id
+//	@GeneratedValue(generator = "UUID")
+//	@GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
+//	@Column(name = "UUID_ROLE", columnDefinition = "char(36)")
+//	@Type(type = "org.hibernate.type.UUIDCharType")
 	@Id
-	@GeneratedValue(generator = "UUID")
-	@GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
-	@Column(name = "UUID_ROLE", columnDefinition = "char(36)")
-	@Type(type = "org.hibernate.type.UUIDCharType")
-    private UUID roleId;
+	@GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer roleId;
 	
 	
 	
@@ -48,7 +51,7 @@ public class RoleModel implements GrantedAuthority {
         return this.roleName.toString();
     }
 
-    public UUID getRoleId() {
+    public Integer getRoleId() {
         return roleId;
     }
 
@@ -56,7 +59,7 @@ public class RoleModel implements GrantedAuthority {
         return roleName;
     }
 
-    public void setRoleId(UUID roleId) {
+    public void setRoleId(Integer roleId) {
         this.roleId = roleId;
     }
 

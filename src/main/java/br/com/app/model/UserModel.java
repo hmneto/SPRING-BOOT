@@ -7,6 +7,7 @@ import java.util.UUID;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
@@ -25,12 +26,14 @@ import org.springframework.security.core.userdetails.UserDetails;
 public class UserModel implements UserDetails {
 	private static final long serialVersionUID = 1L;
 	
+//	@Id
+//	@GeneratedValue(generator = "UUID")
+//	@GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
+//	@Column(name = "UUID_USER", columnDefinition = "char(36)")
+//	@Type(type = "org.hibernate.type.UUIDCharType")
 	@Id
-	@GeneratedValue(generator = "UUID")
-	@GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
-	@Column(name = "UUID_USER", columnDefinition = "char(36)")
-	@Type(type = "org.hibernate.type.UUIDCharType")
-    private UUID userId;
+	@GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer userId;
 
 
 
