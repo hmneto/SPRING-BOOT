@@ -22,5 +22,11 @@ public class CaseControllerTest {
 		mockMvc.perform(get("/case"))
 		.andExpect(status().isOk());
 	}
+	
+	
+//	@Test
+//	public void caseTestSave() {
+//		
+//	}
 
 }
