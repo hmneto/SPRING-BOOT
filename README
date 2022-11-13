@@ -15,5 +15,7 @@ docker run -d -p 9000:9000 -p 9443:9443 --name=portainer --restart=always -v /va
 Footer
 
 
+http://localhost:9000/#!/auth
+
 
 http://localhost:8081/h2-console/
