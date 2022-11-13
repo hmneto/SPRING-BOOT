@@ -15,8 +15,8 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Type;
- import org.hibernate.annotations.GenericGenerator;
- import org.hibernate.annotations.Type;
+//  import org.hibernate.annotations.GenericGenerator;
+//  import org.hibernate.annotations.Type;
 import org.springframework.security.core.GrantedAuthority;
 
 import br.com.app.enums.RoleName;
@@ -64,8 +64,8 @@ public class RoleModel implements GrantedAuthority {
         return roleName;
     }
 
-    public void setRoleId(Integer roleId) {
-        this.idRole = roleId;
+    public void setIdRole(Integer idRole) {
+        this.idRole = idRole;
     }
 
     public void setRoleName(RoleName roleName) {
