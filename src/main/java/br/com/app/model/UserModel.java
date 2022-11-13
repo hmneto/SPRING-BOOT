@@ -45,7 +45,7 @@ public class UserModel implements UserDetails {
 	
 	@GeneratedValue(generator = "UUID")
 	@GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
-	@Column(name = "UUID", columnDefinition = "char(36)")
+	@Column(name = "UUID", columnDefinition = "char(36)", insertable = false, updatable = false, nullable = false)
 	@Type(type = "org.hibernate.type.UUIDCharType")
 	private UUID uuid;
 
