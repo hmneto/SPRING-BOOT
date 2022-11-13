@@ -1,8 +1,8 @@
 version: "3"
 services:
   spring-boot:
-    # networks:
-    #     - application
+    networks:
+        - application
     container_name: spring-boot
     build: .
     ports:
@@ -37,7 +37,7 @@ services:
 #       - 3306:3306
 
 
-# networks:
-#   application:
-#     driver: bridge 
+networks:
+  application:
+    driver: bridge 
     
