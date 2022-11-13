@@ -19,3 +19,7 @@ http://localhost:9000/#!/auth
 
 
 http://localhost:8081/h2-console/
+
+
+
+https://www.jenkins.io/doc/tutorials/build-a-java-app-with-maven/#create-your-initial-pipeline-as-a-jenkinsfile
