@@ -6,7 +6,7 @@ http://192.168.99.100:8082/?server=db&username=root&db=test
 
 http://localhost:8082/?server=db&username=root&db=test
 
-
+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
 
 docker volume create portainer_data
 
