@@ -13,23 +13,29 @@ import javax.persistence.Table;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Type;
 
+
+
 @Entity
 @Table(name = "TB_CASE")
-public class CaseModel {
+public class CaseModel{
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer caseId;
-//	@Id
-//	@GeneratedValue(generator = "UUID")
-//	@GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
-//	@Column(name = "ID_CASE", columnDefinition = "char(36)")
-//	@Type(type = "org.hibernate.type.UUIDCharType")
+	@Column(name = "ID_CASE")
+	private Integer idCase;
+
 	
 	
 	@Column(nullable = false, length = 200, name = "VALUE_CASE")
 	private String value;
 	@Column(nullable = false, name = "DATE_CASE")
 	private LocalDateTime data;
+	
+	
+	@GeneratedValue(generator = "UUID")
+	@GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
+	@Column(name = "UUID", columnDefinition = "char(36)")
+	@Type(type = "org.hibernate.type.UUIDCharType")
+	private UUID uuid;
 
 	public String getValue() {
 		return value;
@@ -50,7 +56,7 @@ public class CaseModel {
 	}
 	@Override
 	public String toString() {
-		return "CaseModel [caseId=" + caseId + ", value=" + value + ", data=" + data + "]";
+		return "CaseModel [caseId=" + idCase + ", value=" + value + ", data=" + data + "]";
 	}
 
 }

@@ -2,6 +2,7 @@ package br.com.app.model;
 
 import java.util.Collection;
 import java.util.List;
+// import java.util.UUID;
 import java.util.UUID;
 
 import javax.persistence.Column;
@@ -17,6 +18,8 @@ import javax.transaction.Transactional;
 
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Type;
+// import org.hibernate.annotations.GenericGenerator;
+// import org.hibernate.annotations.Type;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -26,14 +29,10 @@ import org.springframework.security.core.userdetails.UserDetails;
 public class UserModel implements UserDetails {
 	private static final long serialVersionUID = 1L;
 	
-//	@Id
-//	@GeneratedValue(generator = "UUID")
-//	@GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
-//	@Column(name = "UUID_USER", columnDefinition = "char(36)")
-//	@Type(type = "org.hibernate.type.UUIDCharType")
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer userId;
+	@Column(name = "ID_USER")
+    private Integer idUser;
 
 
 
@@ -42,6 +41,13 @@ public class UserModel implements UserDetails {
 	
 	@Column(name = "PASSWORD", nullable = false, length = 200)
 	private String password;
+	
+	
+	@GeneratedValue(generator = "UUID")
+	@GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
+	@Column(name = "UUID", columnDefinition = "char(36)")
+	@Type(type = "org.hibernate.type.UUIDCharType")
+	private UUID uuid;
 
 	
 	public UserModel() {
@@ -58,8 +64,8 @@ public class UserModel implements UserDetails {
 
     @ManyToMany
     @JoinTable(name = "TB_USERS_ROLES",
-            joinColumns = @JoinColumn(name = "UUID_USER"),
-            inverseJoinColumns = @JoinColumn(name = "UUID_ROLE"))
+            joinColumns = @JoinColumn(name = "ID_USER"),
+            inverseJoinColumns = @JoinColumn(name = "ID_ROLE"))
     private List<RoleModel> roles;
 
 	@Override
