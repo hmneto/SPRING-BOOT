@@ -31,11 +31,11 @@ public class CaseModel{
 	private LocalDateTime data;
 	
 	
-	@GeneratedValue(generator = "UUID")
-	@GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
-	@Column(name = "UUID", columnDefinition = "char(36)")
-	@Type(type = "org.hibernate.type.UUIDCharType")
-	private UUID uuid;
+//	@GeneratedValue(generator = "UUID")
+//	@GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
+//	@Column(name = "UUID", columnDefinition = "char(36)")
+//	@Type(type = "org.hibernate.type.UUIDCharType")
+//	private UUID uuid;
 
 	public String getValue() {
 		return value;

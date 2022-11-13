@@ -39,12 +39,12 @@ public class UserModel implements UserDetails {
 	@Column(name = "PASSWORD", nullable = false, length = 200)
 	private String password;
 	
-	
-	@GeneratedValue(generator = "UUID")
-	@GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
-	@Column(name = "UUID", columnDefinition = "char(36)")
-	@Type(type = "org.hibernate.type.UUIDCharType")
-	private UUID uuid;
+//	
+//	@GeneratedValue(generator = "UUID")
+//	@GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
+//	@Column(name = "UUID", columnDefinition = "char(36)")
+//	@Type(type = "org.hibernate.type.UUIDCharType")
+//	private UUID uuid;
 
 	
 	public UserModel() {
