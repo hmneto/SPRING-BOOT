@@ -2,7 +2,6 @@ package br.com.app.model;
 
 import java.util.Collection;
 import java.util.List;
-// import java.util.UUID;
 import java.util.UUID;
 
 import javax.persistence.Column;
@@ -18,8 +17,6 @@ import javax.transaction.Transactional;
 
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Type;
-// import org.hibernate.annotations.GenericGenerator;
-// import org.hibernate.annotations.Type;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
