@@ -12,12 +12,9 @@ export function setupCounter(element: HTMLButtonElement) {
       'Authorization': 'Basic ' + encode(username + ":" + password),
       'Content-Type': 'application/json'
     }
-    )}
-    
-    )
-
-.then(response => response.text())
-.then(json => console.log(json));
+    )})
+    .then(response => response.text())
+    .then(json => console.log(json));
     
     
     counter = count
