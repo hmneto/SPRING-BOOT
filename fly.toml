@@ -1,6 +1,6 @@
-# fly.toml file generated for app-spring-boot on 2022-11-06T23:32:50-03:00
+# fly.toml file generated for bahm on 2022-11-14T01:05:35-03:00
 
-app = "app-spring-boot"
+app = "bahm"
 kill_signal = "SIGINT"
 kill_timeout = 5
 processes = []
