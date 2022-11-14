@@ -119,3 +119,88 @@ spring.jpa.defer-datasource-initialization=true
 
 spring.h2.console.enabled=true
 spring.h2.console.path=/h2-console
+
+
+
+C:\Users\hmnet\Desktop\API_WEBSITE_ADMIN_MYSQL_ADMINER_IMAGENS_BAHM_DOCKER\CadastroBahm\CadastroBahm>dotnet ef dbcontext scaffold "Server=177.11.53.243;DataBase=cabideda_bahmbr;Uid=cabideda_bahmbr;Pwd=MTB7tNuSwk;" Pomelo.EntityFrameworkCore.MySql -o Entities -f -c BahmDbContext    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+spring.datasource.url=jdbc:mysql://177.11.53.243:3306/cabideda_app?createDatabaseIfNotExist=true
+spring.datasource.username=cabideda_app
+spring.datasource.password=qVIgoL0+
+
+#loggin.level.org.springframework=error
+#spring.datasource.driverClassName=org.h2.Driver
+#spring.datasource.username=sa
+#spring.datasource.password=password
+#spring.jpa.database-platform=org.hibernate.dialect.H2@Dialect
+#
+#spring.h2.console.enabled=true
+#
+#
+#
+#
+#
+#server.port:8081
+#
+#spring.datasource.driverClassName=org.h2.Driver
+#spring.datasource.url=jdbc:h2:mem:testdb
+#spring.datasource.username=sa
+#spring.datasource.password=
+#
+#
+#spring.jpa.database-platform=org.hibernate.dialect.H2Dialect 
+#spring.jpa.hibernate.ddl-auto=update
+#
+#
+#spring.jpa.defer-datasource-initialization=true
+#
+#
+#spring.h2.console.enabled=true
+#spring.h2.console.path=/h2-console
+
+
+
+
+
+
+
+
+
+
+
+
+	    
+	    
+	        
+//	        LocalDate localDate = LocalDate.parse("2022-10-18");
+//	        Integer fluxoId = 1;
+//	        Integer idDono = 1;
+//	        Integer idRegistro = 1;
+//	        String nomeEntrada = "ok";
+//	        TipoFluxo tipoFluxo = TipoFluxo.E ;
+//	        BigDecimal valor = new BigDecimal("10.01"); ;
+//	        RegistroModel registroModel = new RegistroModel(localDate,fluxoId,idDono,idRegistro,nomeEntrada,tipoFluxo,valor);
+//	        registroRepository.save(registroModel);
+	        
+	      
