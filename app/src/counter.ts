@@ -5,7 +5,7 @@ export function setupCounter(element: HTMLButtonElement) {
   const setCounter = (count: number) => {
     const username = 'admin'
     const password = '123'
-    fetch('http://localhost/admin',
+    fetch('http://localhost:8081/admin',
      {method:'GET', 
      headers: new Headers(
       {
