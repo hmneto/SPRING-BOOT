@@ -37,14 +37,18 @@ public class CaseControllerTest {
 	@Test
 	public void caseTestSave() throws JsonProcessingException, Exception {
 		CaseModel caseModel = new CaseModel("TEST_VALUE",LocalDateTime.now());
-
+		//System.out.println(caseModel.toString());
 		
-		mockMvc.perform(post("/case")
+		var mvcResult = mockMvc.perform(post("/case")
 				.contentType("application/json")
 				.content(objectMapper.writeValueAsString(caseModel)))
-				.andExpect(status().isOk());
-				
-				
+				.andExpect(status().isOk())
+				.andReturn();
+		
+		
+	    String responseData = mvcResult.getResponse().getContentAsString();
+	    System.out.println(responseData);
+
 	}
 
 }

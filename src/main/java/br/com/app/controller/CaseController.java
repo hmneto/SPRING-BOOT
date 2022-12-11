@@ -32,8 +32,7 @@ public class CaseController {
 	@PostMapping
 	@ResponseBody
 	public ResponseEntity<CaseModel> save(@RequestBody CaseModel caseModel){
-		System.out.println(caseModel.toString());
-		caseService.Save(caseModel);
-		return ResponseEntity.status(HttpStatus.OK).body(caseModel);
+		var caseResponse = caseService.Save(caseModel);
+		return ResponseEntity.status(HttpStatus.OK).body(caseResponse);
 	}
 }
