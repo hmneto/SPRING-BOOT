@@ -1,19 +1,4 @@
-FROM openjdk:17-alpine
-
-WORKDIR "/home"
-
-COPY . .
-
-RUN apk add maven
-
-WORKDIR "/home"
-
-RUN mvn clean package
-
-# EXPOSE 8081
-
-# CMD [ "java", "-jar",  "/home/target/app-0.0.1-SNAPSHOT.jar"]
-
-# CMD ["mvn","spring-boot:run"]
-
-CMD ["mvn","test"]
+FROM openjdk:8-jdk-alpine
+ARG JAR_FILE=target/*.jar
+COPY ${JAR_FILE} app.jar
+ENTRYPOINT ["java","-jar","/app.jar"]
