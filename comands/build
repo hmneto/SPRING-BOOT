@@ -1,10 +1,4 @@
 mvn package -Dmaven.test.skip
 
-
-docker build -t springio/gs-spring-boot-docker .
-
-
-
-
-docker build -t springio/gs-spring-boot-docker .
-docker run -p 8080:8080 springio/gs-spring-boot-docker
+sudo docker build -t  spring .
+sudo docker run -p 8081:8080 spring
